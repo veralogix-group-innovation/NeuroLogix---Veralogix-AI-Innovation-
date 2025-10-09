@@ -1,0 +1,112 @@
+:root {
+  color-scheme: dark;
+  --bg: radial-gradient(circle at top, rgba(20, 255, 143, 0.08), transparent 55%),
+    #040506;
+  --grid-color: rgba(20, 255, 143, 0.12);
+  --neon: #37ff9f;
+  --neon-soft: rgba(55, 255, 159, 0.45);
+  --text-primary: #f0fff5;
+  --text-secondary: rgba(240, 255, 245, 0.76);
+  --accent: #37ff9f;
+  font-family: "Rajdhani", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.grid-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 120px 120px;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.65), transparent 80%);
+  z-index: 0;
+}
+
+.pulse-glow {
+  box-shadow: 0 0 25px rgba(55, 255, 159, 0.45), 0 0 60px rgba(55, 255, 159, 0.35);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(55, 255, 159, 0.3), 0 0 45px rgba(55, 255, 159, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(55, 255, 159, 0.6), 0 0 90px rgba(55, 255, 159, 0.45);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+.cta {
+  position: relative;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 255, 159, 0.55);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  background: rgba(55, 255, 159, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  overflow: hidden;
+}
+
+button::before,
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(55, 255, 159, 0.25), transparent 80%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+button:hover,
+.cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 0 35px rgba(55, 255, 159, 0.6), 0 0 65px rgba(55, 255, 159, 0.45);
+}
+
+button:active,
+.cta:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 0 45px rgba(55, 255, 159, 0.75);
+}
+
+button:hover::before,
+.cta:hover::before {
+  transform: translateX(100%);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 1.5rem 6rem;
+}
+
+@media (min-width: 960px) {
+  main {
+    padding-inline: 5rem;
+  }
+}

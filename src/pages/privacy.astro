@@ -1,0 +1,319 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en" class="grid-overlay">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>NeuroLogix Privacy Energy Matrix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="privacy">
+      <header class="privacy__hero">
+        <div class="privacy__halo pulse-glow" aria-hidden="true"></div>
+        <div class="privacy__content">
+          <p class="privacy__pre">Neurologix Compliance Signal</p>
+          <h1>Use of Privacy Collection Grid</h1>
+          <p>
+            NeuroLogix collects and orchestrates operational data with luminous precision. This page
+            maps how every photon of information flows, why it is charged, and the protections that
+            guard its journey across the Veralogix lattice.
+          </p>
+        </div>
+      </header>
+
+      <section class="privacy__matrix">
+        <h2>Data Streams We Capture</h2>
+        <div class="privacy__grid">
+          <article class="privacy__card">
+            <h3>Engagement Beacons</h3>
+            <p>
+              Signals from onboarding forms, concierge dialogues, and support tickets. Each entry is
+              timestamped and encrypted before it touches the NeuroLogix core.
+            </p>
+          </article>
+          <article class="privacy__card">
+            <h3>Operational Telemetry</h3>
+            <p>
+              Workflow metadata, automation triggers, and agent performance metrics collected to
+              tune efficiency and stability fields across your enterprise nodes.
+            </p>
+          </article>
+          <article class="privacy__card">
+            <h3>Compliance Credentials</h3>
+            <p>
+              Role-based access keys, audit confirmations, and consent receipts. These are isolated
+              in hardened vaults with adaptive glow-based anomaly detection.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy__use">
+        <h2>Why the Energy is Harvested</h2>
+        <ul>
+          <li>
+            <strong>Service Activation:</strong> initiate tailored agent protocols and keep your
+            command center synchronized in real time.
+          </li>
+          <li>
+            <strong>Experience Refinement:</strong> pulse anonymized diagnostics through our design
+            loops to intensify usability, clarity, and response speeds.
+          </li>
+          <li>
+            <strong>Risk Mitigation:</strong> detect intrusions, fraud, or policy drift via spectral
+            analytics and automated compliance alarms.
+          </li>
+        </ul>
+      </section>
+
+      <section class="privacy__consent">
+        <div class="privacy__consent-shell">
+          <h2>Consent & Control Switches</h2>
+          <p>
+            You command your data flux. Adjust preferences, revoke specific access points, or
+            request deletion by signaling the concierge channel. We respond within 72 hours with a
+            full audit trail of the action taken.
+          </p>
+          <div class="privacy__actions">
+            <a class="cta" href="mailto:privacy@veralogix.ai">Request Data Pulse</a>
+            <a class="cta cta--ghost" href="mailto:hello@veralogix.ai">Concierge Support</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy__guardians">
+        <h2>How We Secure the Signal</h2>
+        <div class="privacy__grid privacy__grid--dual">
+          <article class="privacy__card">
+            <h3>Layered Shielding</h3>
+            <p>
+              Multi-region redundancy, hardware encryption modules, and zero-trust network access
+              enforce persistent glow barriers around sensitive clusters.
+            </p>
+          </article>
+          <article class="privacy__card">
+            <h3>Human Oversight</h3>
+            <p>
+              Certified compliance engineers review alerts, calibrate access rules, and document
+              every escalation in immutable ledgers.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy__footer">
+        <p>
+          For regulatory inquiries or partnership reviews, contact our Security Compliance Guard at
+          <a href="mailto:compliance@veralogix.ai">compliance@veralogix.ai</a>. All transmissions
+          are monitored through encrypted glow channels.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  .privacy {
+    display: grid;
+    gap: clamp(3rem, 6vw, 5rem);
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+
+  .privacy__hero {
+    position: relative;
+    border: 1px solid rgba(55, 255, 159, 0.35);
+    border-radius: 2.4rem;
+    background: linear-gradient(140deg, rgba(6, 16, 12, 0.92), rgba(3, 10, 8, 0.72));
+    padding: clamp(2.5rem, 5vw, 4rem);
+    overflow: hidden;
+  }
+
+  .privacy__halo {
+    position: absolute;
+    inset: -30% -20% 10% 55%;
+    background: radial-gradient(circle at center, rgba(55, 255, 159, 0.55), transparent 70%);
+    filter: blur(16px);
+  }
+
+  .privacy__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1.5rem;
+    max-width: 720px;
+  }
+
+  .privacy__pre {
+    font-size: 0.9rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(240, 255, 245, 0.6);
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .privacy__matrix,
+  .privacy__use,
+  .privacy__guardians {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .privacy__matrix h2,
+  .privacy__use h2,
+  .privacy__guardians h2,
+  .privacy__consent h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    color: var(--accent);
+  }
+
+  .privacy__grid {
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  @media (min-width: 768px) {
+    .privacy__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .privacy__grid--dual {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .privacy__card {
+    position: relative;
+    border: 1px solid rgba(55, 255, 159, 0.25);
+    border-radius: 1.6rem;
+    background: linear-gradient(160deg, rgba(6, 18, 13, 0.85), rgba(4, 10, 8, 0.75));
+    padding: 1.75rem;
+    box-shadow: inset 0 0 0 1px rgba(55, 255, 159, 0.08);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  }
+
+  .privacy__card::after {
+    content: "";
+    position: absolute;
+    inset: -120% 30% 40% -60%;
+    background: radial-gradient(circle, rgba(55, 255, 159, 0.15), transparent 70%);
+    opacity: 0;
+    transform: rotate(8deg);
+    transition: opacity 0.5s ease;
+  }
+
+  .privacy__card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(55, 255, 159, 0.55);
+    box-shadow: 0 0 35px rgba(55, 255, 159, 0.45), 0 0 85px rgba(55, 255, 159, 0.25);
+  }
+
+  .privacy__card:hover::after {
+    opacity: 1;
+  }
+
+  .privacy__card h3 {
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.85rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+  }
+
+  .privacy__card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .privacy__use ul {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .privacy__use li {
+    position: relative;
+    padding-left: 1.6rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .privacy__use li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(55, 255, 159, 0.7);
+  }
+
+  .privacy__consent {
+    position: relative;
+  }
+
+  .privacy__consent-shell {
+    border: 1px solid rgba(55, 255, 159, 0.4);
+    border-radius: 2rem;
+    padding: clamp(2rem, 4vw, 3rem);
+    background: linear-gradient(150deg, rgba(7, 20, 14, 0.92), rgba(3, 10, 8, 0.72));
+    display: grid;
+    gap: 1.8rem;
+  }
+
+  .privacy__consent p {
+    color: var(--text-secondary);
+    line-height: 1.9;
+    max-width: 62ch;
+  }
+
+  .privacy__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .privacy__guardians {
+    border: 1px solid rgba(55, 255, 159, 0.32);
+    border-radius: 2rem;
+    padding: clamp(2.4rem, 4vw, 3.5rem);
+    background: linear-gradient(160deg, rgba(5, 14, 10, 0.9), rgba(3, 9, 7, 0.68));
+  }
+
+  .privacy__footer {
+    text-align: center;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .privacy__footer a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.35em;
+    transition: text-shadow 0.4s ease;
+  }
+
+  .privacy__footer a:hover {
+    text-shadow: 0 0 14px rgba(55, 255, 159, 0.6);
+  }
+</style>

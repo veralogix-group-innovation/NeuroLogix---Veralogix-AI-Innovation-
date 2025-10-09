@@ -1,0 +1,258 @@
+---
+import "../styles/global.css";
+import EnergyCard from "../components/EnergyCard.astro";
+const cards = [
+  {
+    title: "Neural Throughput",
+    metric: "98.2%",
+    description:
+      "Optimization layer synchronizes procurement, HR, and finance signals in real-time with 0.8s response latency.",
+  },
+  {
+    title: "Engagement Flux",
+    metric: "+142%",
+    description:
+      "Autonomous concierge loops triage inbound opportunities with hyper-personalized glowing pathways for each client.",
+    accent: "amber",
+  },
+  {
+    title: "Stability Field",
+    metric: "0 incidents",
+    description:
+      "Security compliance guard maintains shielded audit trails and anomaly beacons with predictive countermeasures.",
+  },
+];
+---
+
+<html lang="en" class="grid-overlay">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>NeuroLogix Control Nexus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero__signal pulse-glow" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="hero__pre">NeuroLogix Systems • Active</p>
+          <h1>
+            Cyber-Glow Intelligence Deck
+            <span>Guiding industrial power with luminous precision.</span>
+          </h1>
+          <p class="hero__body">
+            Navigate the Veralogix energy stream. Activate agents, choreograph automation, and
+            illuminate decisions across procurement, HR, and finance with a singular neon command hub.
+          </p>
+          <div class="hero__actions">
+            <a class="cta" href="#agents">Engage Agents</a>
+            <a class="cta cta--ghost" href="https://docs.astro.build">System Docs</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="agents" class="agents">
+        <header>
+          <span class="agents__pre">Agent Array</span>
+          <h2>Orchestrate the NeuroLogix Collective</h2>
+          <p>
+            Each module glows with adaptive telemetry—hover to amplify signals and unlock deeper
+            diagnostics for your operational frontier.
+          </p>
+        </header>
+        <div class="agents__grid">
+          {cards.map((card) => (
+            <EnergyCard {...card} />
+          ))}
+        </div>
+      </section>
+
+      <section class="footer">
+        <div class="footer__grid">
+          <div>
+            <h3>Signal Router</h3>
+            <ul>
+              <li><a href="mailto:hello@veralogix.ai">hello@veralogix.ai</a></li>
+              <li><a href="https://www.veralogix.ai">Portal Access</a></li>
+              <li><a href="/privacy">Privacy Collection Grid</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Active Channels</h3>
+            <ul>
+              <li>Procurement Optimization</li>
+              <li>HR & Productivity Intelligence</li>
+              <li>Financial Brainwave Analytics</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Energy Status</h3>
+            <p>All systems calibrated. Next deployment window opens every 6 hours.</p>
+          </div>
+        </div>
+        <p class="footer__note">© {new Date().getFullYear()} Veralogix NeuroLogix Systems</p>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  .hero {
+    position: relative;
+    display: grid;
+    gap: 3rem;
+    padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    border: 1px solid rgba(55, 255, 159, 0.35);
+    border-radius: 2rem;
+    background: linear-gradient(145deg, rgba(8, 18, 15, 0.8), rgba(5, 12, 10, 0.65));
+    overflow: hidden;
+  }
+
+  .hero__signal {
+    position: absolute;
+    inset: 20% -25% -30% 55%;
+    background: radial-gradient(circle at center, rgba(55, 255, 159, 0.45), transparent 70%);
+    filter: blur(12px);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .hero__pre {
+    font-size: 0.85rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: rgba(240, 255, 245, 0.6);
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  h1 span {
+    font-size: clamp(1rem, 2.5vw, 1.45rem);
+    letter-spacing: 0.35em;
+    color: rgba(55, 255, 159, 0.75);
+  }
+
+  .hero__body {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 65ch;
+    line-height: 1.8;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta--ghost {
+    border-color: rgba(55, 255, 159, 0.2);
+    background: rgba(6, 12, 10, 0.65);
+  }
+
+  .agents {
+    margin-top: 5rem;
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .agents header {
+    max-width: 60ch;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .agents__pre {
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: rgba(240, 255, 245, 0.65);
+  }
+
+  .agents h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-transform: uppercase;
+  }
+
+  .agents p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .agents__grid {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 960px) {
+    .agents__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .footer {
+    margin-top: 6rem;
+    padding: 3rem clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid rgba(55, 255, 159, 0.25);
+    border-radius: 1.5rem;
+    background: linear-gradient(145deg, rgba(8, 18, 15, 0.7), rgba(5, 12, 10, 0.6));
+    box-shadow: inset 0 0 28px rgba(55, 255, 159, 0.05);
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 720px) {
+    .footer__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .footer h3 {
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: rgba(240, 255, 245, 0.65);
+  }
+
+  .footer ul {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .footer ul li {
+    color: var(--text-secondary);
+    letter-spacing: 0.06em;
+  }
+
+  .footer__note {
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    font-size: 0.7rem;
+    color: rgba(240, 255, 245, 0.45);
+  }
+</style>
