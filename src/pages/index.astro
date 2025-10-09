@@ -22,6 +22,11 @@ const cards = [
       "Security compliance guard maintains shielded audit trails and anomaly beacons with predictive countermeasures.",
   },
 ];
+
+const normalizedBase = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const privacyHref = `${normalizedBase}privacy`;
 ---
 
 <html lang="en" class="grid-overlay">
@@ -80,7 +85,9 @@ const cards = [
             <ul>
               <li><a href="mailto:hello@veralogix.ai">hello@veralogix.ai</a></li>
               <li><a href="https://www.veralogix.ai">Portal Access</a></li>
-              <li><a href="/privacy">Privacy Collection Grid</a></li>
+              <li>
+                <a href={privacyHref}>Privacy Collection Grid</a>
+              </li>
             </ul>
           </div>
           <div>
