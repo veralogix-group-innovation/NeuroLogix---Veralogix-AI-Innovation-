@@ -23,6 +23,7 @@ const cards = [
   },
 ];
 
+const privacyHref = new URL("./privacy", Astro.url).pathname;
 const baseURL = Astro.site
   ? new URL(Astro.site)
   : new URL(import.meta.env.BASE_URL || "/", "http://localhost:4321/");
