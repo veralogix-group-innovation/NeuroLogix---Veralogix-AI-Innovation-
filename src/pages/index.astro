@@ -37,17 +37,18 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <div class="ambient-particles" aria-hidden="true"></div>
     <main>
       <section class="hero">
         <div class="hero__signal pulse-glow" aria-hidden="true"></div>
         <div class="hero__content">
           <p class="hero__pre">NeuroLogix Systems • Active</p>
-          <h1>
+          <h1 class="hero__title">
             Cyber-Glow Intelligence Deck
             <span>Guiding industrial power with luminous precision.</span>
           </h1>
@@ -106,6 +107,9 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
         <p class="footer__note">© {new Date().getFullYear()} Veralogix NeuroLogix Systems</p>
       </section>
     </main>
+    <script type="module" src="/src/scripts/buttonFX.ts"></script>
+    <script type="module" src="/src/scripts/cursor.ts"></script>
+    <script type="module" src="/src/scripts/ambient.ts"></script>
   </body>
 </html>
 
@@ -114,18 +118,21 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     position: relative;
     display: grid;
     gap: 3rem;
-    padding: 3rem clamp(1.5rem, 5vw, 4rem);
-    border: 1px solid rgba(55, 255, 159, 0.35);
+    padding: 3.5rem clamp(1.5rem, 6vw, 4.5rem);
+    border: 1px solid rgba(57, 255, 20, 0.32);
     border-radius: 2rem;
-    background: linear-gradient(145deg, rgba(8, 18, 15, 0.8), rgba(5, 12, 10, 0.65));
+    background: linear-gradient(140deg, rgba(26, 26, 26, 0.95), rgba(51, 51, 51, 0.65));
+    box-shadow: inset 0 0 18px rgba(57, 255, 20, 0.18), 0 35px 90px rgba(0, 0, 0, 0.65);
     overflow: hidden;
+    isolation: isolate;
   }
 
   .hero__signal {
     position: absolute;
-    inset: 20% -25% -30% 55%;
-    background: radial-gradient(circle at center, rgba(55, 255, 159, 0.45), transparent 70%);
-    filter: blur(12px);
+    inset: -35% 40% -40% -15%;
+    background: radial-gradient(circle at center, rgba(57, 255, 20, 0.5), transparent 70%);
+    filter: blur(16px);
+    mix-blend-mode: screen;
   }
 
   .hero__content {
@@ -134,27 +141,32 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     max-width: 720px;
     display: grid;
     gap: 1.6rem;
+    font-family: var(--font-body);
   }
 
   .hero__pre {
     font-size: 0.85rem;
     letter-spacing: 0.38em;
     text-transform: uppercase;
-    color: rgba(240, 255, 245, 0.6);
+    color: rgba(233, 255, 238, 0.65);
   }
 
-  h1 {
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    line-height: 1.05;
+  .hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    line-height: 1.02;
     text-transform: uppercase;
     display: grid;
     gap: 0.65rem;
+    letter-spacing: 0.18em;
+    text-shadow: 0 0 12px rgba(57, 255, 20, 0.45);
+    animation: title-flicker 4.8s ease-in-out infinite;
   }
 
-  h1 span {
+  .hero__title span {
     font-size: clamp(1rem, 2.5vw, 1.45rem);
-    letter-spacing: 0.35em;
-    color: rgba(55, 255, 159, 0.75);
+    letter-spacing: 0.45em;
+    color: rgba(57, 255, 20, 0.75);
   }
 
   .hero__body {
@@ -162,6 +174,11 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     font-size: 1.05rem;
     max-width: 65ch;
     line-height: 1.8;
+    background: rgba(26, 26, 26, 0.45);
+    padding: 1.25rem 1.5rem;
+    border-radius: 1.1rem;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    box-shadow: inset 0 0 16px rgba(57, 255, 20, 0.08);
   }
 
   .hero__actions {
@@ -171,8 +188,9 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
   }
 
   .cta--ghost {
-    border-color: rgba(55, 255, 159, 0.2);
-    background: rgba(6, 12, 10, 0.65);
+    border-color: rgba(57, 255, 20, 0.18);
+    background: rgba(26, 26, 26, 0.65);
+    color: rgba(233, 255, 238, 0.85);
   }
 
   .agents {
@@ -191,17 +209,27 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     font-size: 0.85rem;
-    color: rgba(240, 255, 245, 0.65);
+    color: rgba(233, 255, 238, 0.65);
   }
 
   .agents h2 {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     text-transform: uppercase;
+    font-family: var(--font-heading);
+    letter-spacing: 0.24em;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+    animation: title-flicker 6.2s ease-in-out infinite;
   }
 
   .agents p {
     color: var(--text-secondary);
     line-height: 1.7;
+    max-width: 72ch;
+    background: rgba(26, 26, 26, 0.4);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(57, 255, 20, 0.12);
+    box-shadow: inset 0 0 12px rgba(57, 255, 20, 0.08);
   }
 
   .agents__grid {
@@ -218,10 +246,10 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
   .footer {
     margin-top: 6rem;
     padding: 3rem clamp(1.5rem, 5vw, 3rem);
-    border: 1px solid rgba(55, 255, 159, 0.25);
+    border: 1px solid rgba(57, 255, 20, 0.2);
     border-radius: 1.5rem;
-    background: linear-gradient(145deg, rgba(8, 18, 15, 0.7), rgba(5, 12, 10, 0.6));
-    box-shadow: inset 0 0 28px rgba(55, 255, 159, 0.05);
+    background: linear-gradient(150deg, rgba(26, 26, 26, 0.9), rgba(51, 51, 51, 0.55));
+    box-shadow: inset 0 0 28px rgba(57, 255, 20, 0.08), 0 30px 70px rgba(0, 0, 0, 0.45);
     display: grid;
     gap: 2.5rem;
   }
@@ -242,7 +270,8 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     text-transform: uppercase;
     margin-bottom: 1rem;
     font-size: 0.85rem;
-    color: rgba(240, 255, 245, 0.65);
+    color: rgba(233, 255, 238, 0.65);
+    font-family: var(--font-heading);
   }
 
   .footer ul {
@@ -260,6 +289,23 @@ const privacyHref = new URL("./privacy", baseURL).pathname;
     text-transform: uppercase;
     letter-spacing: 0.28em;
     font-size: 0.7rem;
-    color: rgba(240, 255, 245, 0.45);
+    color: rgba(233, 255, 238, 0.45);
+  }
+
+  @keyframes title-flicker {
+    0%,
+    18%,
+    22%,
+    53%,
+    57%,
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 16px rgba(57, 255, 20, 0.55);
+    }
+    20%,
+    55% {
+      opacity: 0.8;
+      text-shadow: 0 0 4px rgba(57, 255, 20, 0.35);
+    }
   }
 </style>
