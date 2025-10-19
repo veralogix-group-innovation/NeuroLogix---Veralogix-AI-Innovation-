@@ -28,6 +28,16 @@ body {
   font-family: var(--font-body);
 }
 
+h1,
+h2,
+h3,
+nav,
+.hero__pre,
+.agents__pre,
+.footer h3 {
+  font-family: "Orbitron", "Rajdhani", "Segoe UI", sans-serif;
+}
+
 .grid-overlay::before {
   content: "";
   position: fixed;
